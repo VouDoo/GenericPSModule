@@ -1,0 +1,22 @@
+{
+    "files.eol": "\r\n",
+    "files.encoding": "utf8",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "search.exclude": {
+        "./Release": true
+    },
+    "powershell.codeFormatting.preset": "Stroustrup",
+    "powershell.codeFormatting.addWhitespaceAroundPipe": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.codeFormatting.autoCorrectAliases": true,
+    "powershell.scriptAnalysis.settingsPath": "PSScriptAnalyzerSettings.psd1",
+    "[markdown]": {
+        "editor.tabSize": 2,
+        "editor.trimAutoWhitespace": false,
+        "files.trimTrailingWhitespace": false
+    },
+}

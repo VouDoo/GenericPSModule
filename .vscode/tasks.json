@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "bootstrap",
+            "type": "shell",
+            "command": "Invoke-Build -Bootstrap"
+        },
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "Invoke-Build -Task CompileModule"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "Invoke-Build -Task TestModule"
+        },
+        {
+            "label": "compile-and-test",
+            "type": "shell",
+            "command": "Invoke-Build -Task CompileModule,TestModule"
+        },
+        {
+            "label": "generate-help",
+            "type": "shell",
+            "command": "Invoke-Build -Task GenerateHelp"
+        },
+        {
+            "label": "cleanup",
+            "type": "shell",
+            "command": "Invoke-Build -Task CleanUp"
+        },
+    ]
+}
