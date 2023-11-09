@@ -1,4 +1,4 @@
-function Test-WinServiceAutomatic {
+function Test-ServiceAutomatic {
     <#
     .SYNOPSIS
         Tests if Windows service is set to Automatic.
@@ -8,7 +8,7 @@ function Test-WinServiceAutomatic {
         including Automatic (Delayed start).
 
     .INPUTS
-        None. You cannot pipe objects to Test-WinServiceAutomatic.
+        None. You cannot pipe objects to Test-ServiceAutomatic.
 
     .OUTPUTS
         None.
@@ -17,7 +17,7 @@ function Test-WinServiceAutomatic {
         Name of the Windows service.
 
     .EXAMPLE
-        PS> Test-WinServiceAutomatic -Name "MyService"
+        PS> Test-ServiceAutomatic -Name "MyService"
 
         Return True if service is set to automatic, else False.
 
