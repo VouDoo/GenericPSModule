@@ -24,7 +24,7 @@ function Set-ServiceAutomaticDelayed {
     .EXAMPLE
         PS> Set-ServiceAutomaticDelayed -Name "MyService"
 
-
+        Set service to automatic (delayed start).
 
     #>
 
