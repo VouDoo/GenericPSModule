@@ -16,3 +16,37 @@ You can clone this repository if you intend to create new PowerShell module proj
 
   - Set/change value of any other required keys.
 - Remove example functions and classes.
+
+---
+
+## Install from source
+
+1. Unblock downloaded scripts
+
+    ```powershell
+    Get-ChildItem -Filter *.ps1 -Recurse | Unblock-File
+    ```
+
+2. Build the module (module `InvokeBuild` is required)
+
+    ```powershell
+    Invoke-Build -Task CompileModule -Bootstrap
+    ```
+
+3. You can import the release module in your current PS session
+
+    ```powershell
+    ./import.release.ps1
+    ```
+
+4. ... And/or install it too :)
+
+    ```powershell
+    ./install.release.ps1
+    ```
+
+---
+
+## Contributing
+
+Please, read the [CONTRIBUTING](./CONTRIBUTING.md) file to get more information.
