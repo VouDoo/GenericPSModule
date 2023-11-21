@@ -95,6 +95,12 @@ task CompileModule Init, CleanUp, {
         }
         Update-ModuleManifest @UpdateModuleManifestParams -Path $Settings.ReleaseManifest
     }
+
+    "Update FileList in release manifest." | Write-BuildInfo
+    $UpdateModuleManifestParams = @{
+        FileList = Get-ChildItem -Path $Settings.Release -Recurse -File -Name
+    }
+    Update-ModuleManifest @UpdateModuleManifestParams -Path $Settings.ReleaseManifest
 }
 
 task AnalyzeCode Init, {

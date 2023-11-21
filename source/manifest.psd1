@@ -85,6 +85,7 @@
     # ModuleList = @()
 
     # List of all files packaged with this module
+    # DO NOT UNCOMMENT automatically generated at build time.
     # FileList = @()
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
