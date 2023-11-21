@@ -1,17 +1,17 @@
 <#
 .SYNOPSIS
-    install release module.
+    Install release module.
 
 .DESCRIPTION
     Install module from release directory.
 
 .EXAMPLE
-    PS> install.release.ps1
+    PS> ./install.release.ps1
 
     Install module for the current user only.
 
 .EXAMPLE
-    PS> import.release.ps1 -AllUsers
+    PS> ./import.release.ps1 -AllUsers
 
     Install module for all the users on the system.
 
@@ -29,7 +29,7 @@ param (
 # Load settings
 $Settings = & (Join-Path -Path $PSScriptRoot -ChildPath "settings.ps1")
 
-# Check if release module exist
+# Check if release module exists
 if (-not (Test-Path -Path $Settings.Release -PathType Container)) {
     Write-Error -ErrorAction Stop -Message "Release module does not exist. Build it first."
 }
@@ -45,7 +45,7 @@ else {
 # Define destination directory
 $Destination = "$ModuleRoot\{0}\{1}" -f $Settings.ModuleName, $Settings.ModuleVersion
 
-# Remove destination directory if exist
+# Remove destination directory if exists
 if (Test-Path -Path $Destination -PathType Container) {
     Remove-Item -Path $Destination -Recurse
 }

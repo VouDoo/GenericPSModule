@@ -6,13 +6,13 @@
     Import module from release module file or manifest in the current PS Session.
 
 .EXAMPLE
-    PS> import.release.ps1 -Source Module
+    PS> ./import.release.ps1 -Source Module
 
     Import module from psm1 file.
     This is useful when you need to test all the functions.
 
 .EXAMPLE
-    PS> import.release.ps1 -Source Manifest
+    PS> ./import.release.ps1 -Source Manifest
 
     Import module from psd1 file.
     It imports the module as it is expressed in the manifest.
@@ -35,7 +35,7 @@ param (
 # Load settings
 $Settings = & (Join-Path -Path $PSScriptRoot -ChildPath "settings.ps1")
 
-# Check if release module exist
+# Check if release module exists
 if (-not (Test-Path -Path $Settings.Release -PathType Container)) {
     Write-Error -ErrorAction Stop -Message "Release module does not exist. Build it first."
 }
