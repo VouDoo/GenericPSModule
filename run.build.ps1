@@ -84,12 +84,12 @@ task CompileModule Init, CleanUp, {
     }
     New-ModuleManifest @NewModuleManifestParams -Path $Settings.ReleaseManifest
 
-    "Update release manifest with source manifest values." -f $Settings.ReleaseManifest | Write-BuildInfo
+    "Update release manifest with source manifest values." | Write-BuildInfo
     $SourceManifestParams = Import-PowerShellDataFile -Path $Settings.SourceManifest
     Update-ModuleManifest @SourceManifestParams -Path $Settings.ReleaseManifest
 
     if ($Settings.SourcePublicFunctions) {
-        "Update FunctionsToExport in release manifest." -f $Settings.ReleaseManifest | Write-BuildInfo
+        "Update FunctionsToExport in release manifest." | Write-BuildInfo
         $UpdateModuleManifestParams = @{
             FunctionsToExport = $Settings.SourcePublicFunctions.BaseName
         }
