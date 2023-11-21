@@ -17,6 +17,9 @@
     Import module from psd1 file.
     It imports the module as it is expressed in the manifest.
 
+.LINK
+    - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_modules
+
 #>
 
 [CmdletBinding()]
@@ -31,6 +34,11 @@ param (
 
 # Load settings
 $Settings = & (Join-Path -Path $PSScriptRoot -ChildPath "settings.ps1")
+
+# Check if release module exist
+if (-not (Test-Path -Path $Settings.Release -PathType Container)) {
+    Write-Error -ErrorAction Stop -Message "Release module does not exist. Build it first."
+}
 
 # Import release module
 $FileToImport = switch ($Source) {
