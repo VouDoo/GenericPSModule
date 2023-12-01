@@ -1,5 +1,10 @@
 BeforeAll {
-    Import-Module -Name $env:PESTER_MODULE_FILE
+    if ($env:PESTER_MODULE_FILE -ne $null) {
+        Import-Module -Name $env:PESTER_MODULE_FILE
+    }
+    else {
+        . "$PSScriptRoot\..\import.release.ps1"
+    }
 }
 
 Describe "Test PowerShell versions" {
